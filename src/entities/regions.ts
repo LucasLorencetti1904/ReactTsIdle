@@ -1,4 +1,4 @@
-import Region from "Region.ts";
+import Region from "./Region.ts";
 
 const regions: Region[] = [
     new Region("Grasslands", 1)

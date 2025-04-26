@@ -1,4 +1,4 @@
-import Material from "Material.ts";
+import Material from "./Material.ts";
 
 const items: Item[] = [
     new Material(

@@ -1,8 +1,8 @@
-import Place from "Place.ts";
-import regions from "regions.ts";
+import Place from "./Place.ts";
+import { grassLands } from "./regions.ts";
 
 const places: Place[] = [
-    new Place("Waterfall Of So Many Things", "warm", regions[0])
+    new Place("Waterfall Of So Many Things", "warm", grassLands)
 ];
 
 export const waterFallOfSoManyThings: Place = places[0];

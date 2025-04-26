@@ -1,4 +1,8 @@
-type temperatureTypes = "cold" | "warm" | "hot";
+type temperatureTypes =
+    | "cold"
+    | "warm"
+    | "hot"
+;
 
 export default class Place {
     public name: string;
@@ -7,7 +11,7 @@ export default class Place {
     
     public constructor(
         name: string,
-        temperature: TemperatureTypes
+        temperature: TemperatureTypes,
         region: Region
     ) {
         this.name = name;

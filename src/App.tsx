@@ -3,6 +3,10 @@ import * as React from "react";
 import { GlobalStyles } from "@mui/material";
 import BestiaryCard from "./components/CustomCard";
 
+import {
+    weakGoblin
+} from "./entities/mobs";
+
 const MyGlobalStyles = () => {
     return (
         <GlobalStyles
@@ -32,13 +36,7 @@ const App = () => {
     return (
         <>
         <MyGlobalStyles />
-        <BestiaryCard
-            name="goblin"
-            description={
-                `Usually fount at night
-                in jungles and swamps.`
-            }
-        />
+        <BestiaryCard mob={weakGoblin} />
         </>
     )
 }

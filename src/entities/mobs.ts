@@ -1,15 +1,27 @@
-import Mob from "Mob.ts";
-import Goblin from "Goblin.ts";
+import Mob from "./Mob.ts";
+import Goblin from "./Goblin.ts";
 
 import {
     goblinSlipper
-} from items.ts;
+} from "./items.ts";
+
+import {
+    waterFallOfSoManyThings
+} from "./places.ts";
+
+import {
+    grassLands
+} from "./regions.ts";
 
 const mobs: Mob[] = [
     new Goblin(
-        "Weak Goblin", "goblin", [
+        "Weak Goblin",
+        `The most common goblin, can be found
+        in ${grassLands.name}.`,
+        [
             waterFallOfSoManyThings    
-        ], [
+        ],
+        [
             {
                 item: goblinSlipper,
                 chance: 34

@@ -14,13 +14,13 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import DiamondIcon from "@mui/icons-material/Diamond";
 
-interface BestiaryCardProps {
-    name: string;
-    description: string;
-    drops: 
+import Mob from "../entities/Mob";
+
+interface bestiaryProps {
+    mob: Mob;
 }
 
-export default function BestiaryCard({ name, description }: BestiaryCardProps) {
+export default function BestiaryCard({ mob }: bestiaryProps) {
     return (
         <Card sx={{
             padding: "0.5rem",
@@ -63,7 +63,7 @@ export default function BestiaryCard({ name, description }: BestiaryCardProps) {
                             fontSize: "3.6em",
                         }}
                     >
-                    {name}
+                    {mob.name}
                     </Typography>
                     <Box
                         sx={{
@@ -86,17 +86,8 @@ export default function BestiaryCard({ name, description }: BestiaryCardProps) {
                                 textAlign: "center"
                             }}
                         >
-                            {description}
+                            {mob.description}
                         </Typography>
-                    </Box>
-                    <Box>
-                        <Chip>
-                            <Typography
-                                variant="body1"
-                            >
-                                
-                            </Typography>
-                        <Chip>
                     </Box>
                 </CardContent>
             </CardActionArea>
