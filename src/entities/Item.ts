@@ -1,4 +1,4 @@
-type RarityTiers =
+export type RarityTiers =
     | "common"
     | "incommon" 
     | "rare"
@@ -8,24 +8,19 @@ type RarityTiers =
 ;
 
 export default abstract class Item {
-    public name!: string;
-    public rarity!: RarityTiers;
-    public description!: string;
-    public value!: number;
     public category: string;
 
     public constructor(
-        name: string,
-        rarity: RarityTiers,
-        description: string,
-        value: number,
-        category: string
-
+        public name: string,
+        public rarity: RarityTiers,
+        public description: string,
+        public value: number
     ) {
         this.name = name;
         this.rarity = rarity;
         this.description = description;
         this.value = value;
-        this.category = constructor.name;
+        
+        this.category = this.constructor.name;
     }
 }

@@ -2,25 +2,17 @@ import {
     Box,
     Card,
     CardHeader,
-    CardMedia,
     CardContent,
-    CardActionArea,
     CardActions,
     Typography,
-    IconButton,
     Button
 } from "@mui/material";
 
-import DeleteIcon from "@mui/icons-material/Delete";
 import DiamondIcon from "@mui/icons-material/Diamond";
 
 import Mob from "../entities/Mob";
 
-interface bestiaryProps {
-    mob: Mob;
-}
-
-export default function BestiaryCard({ mob }: bestiaryProps) {
+export default function BestiaryCard({ mob }: { mob: Mob }) {
     return (
         <Card sx={{
             padding: "0.5rem",
@@ -30,67 +22,72 @@ export default function BestiaryCard({ mob }: bestiaryProps) {
                 xs: 200,
                 sm: 300,
                 md: 400,
-                lg: 500
+                lg: 300
             },
+            transition: "transform 0.8s ease",
+            userSelect: "none",
+            "&:hover": {
+                transform: "scale(1.06)"
+            }
         }}>
-            <CardActionArea>
-                <CardHeader
-                    title="Bestiary"
+            <CardHeader
+                title="Bestiary"
+                sx={{
+                    flex: 1,
+                    height: "0.2em",
+                    "& .MuiCardHeader-title": {
+                        textAlign: "center"
+                    }
+                }}
+            />
+            <CardContent
+                sx={{
+                    flex: 1,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    margin: "1em 0 1em 0"
+                }}
+            >
+                <Typography
+                    variant="h1"
                     sx={{
-                        flex: 1,
-                        height: "0.2em",
-                        "& .MuiCardHeader-title": {
-                            textAlign: "center"
-                        }
+                        textTransform: "uppercase",
+                        textAlign: "center",
+                        fontWeight: "bold",
+                        color: "#000",
+                        fontSize: "3.6em",
                     }}
-                />
-                <CardContent
+                >
+                {mob.name}
+                </Typography>
+                <Box
                     sx={{
-                        flex: 1,
+                        boxSizing: "border-box",
+                        margin: "1em",
+                        padding: "0 10%",
+                        height: "6em",
                         display: "flex",
-                        flexDirection: "column",
                         justifyContent: "center",
-                        margin: "1em 0 1em 0"
+                        alignItems: "center",
+                        backgroundColor: "#e3e5e8",
+                        borderRadius: "10px",
+                        overflowY: "auto",
+                        overflowX: "hidden",
+                        userSelect: "text"
                     }}
                 >
                     <Typography
-                        variant="h1"
+                        variant="body2"
                         sx={{
-                            textTransform: "uppercase",
-                            textAlign: "center",
-                            fontWeight: "bold",
-                            color: "#000",
-                            fontSize: "3.6em",
+                            wordWrap: "break-word",
+                            textAlign: "center"
                         }}
                     >
-                    {mob.name}
+                        {mob.description}
                     </Typography>
-                    <Box
-                        sx={{
-                            boxSizing: "border-box",
-                            padding: "0 10%",
-                            height: "12em",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            backgroundColor: "#e3e5e8",
-                            borderRadius: "25px",
-                            overflowY: "auto",
-                            overflowX: "hidden"
-                        }}
-                    >
-                        <Typography
-                            variant="body2"
-                            sx={{
-                                wordWrap: "break-word",
-                                textAlign: "center"
-                            }}
-                        >
-                            {mob.description}
-                        </Typography>
-                    </Box>
-                </CardContent>
-            </CardActionArea>
+                </Box>
+            </CardContent>
             <CardActions sx={{
                 flex: 1,
                 display: "flex",

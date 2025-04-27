@@ -1,38 +1,35 @@
-import Place from "./Place.ts";
-import Item from "./Item.ts";
+import Place from "./Place";
+import Item from "./Item";
 
 export type DropChance = {
     item: Item;
     chance: number;
 };
 
-export function randLevel(max): number {
+export function randLevel(max: number): number {
     return Math.floor(Math.random() * (max + 1))
 }
 
 export default abstract class Mob {
-    public name: string;
-    public description: string;
     public race: string;
-    public location: Place[];
-    public drops: DropChance[];
     
     public level: number;
     public health: number;
     public damage: number;
 
     public constructor(
-        name: string,
-        description: string,
-        location: Place[],
-        drops: DropChance[]
+        public name: string,
+        public description: string,
+        public location: Place[],
+        public drops: DropChance[]
     ) {
         this.name = name;
         this.description = description;
-        this.race = this.constructor.name;
         this.location = location;
         this.drops = drops;
         
+        this.race = this.constructor.name;
+
         this.level = this.calcLevel();
         this.health = this.calcHealth();
         this.damage = this.calcDamage();

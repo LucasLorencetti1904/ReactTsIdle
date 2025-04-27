@@ -1,33 +1,32 @@
-import Mob from "./Mob.ts";
-import Goblin from "./Goblin.ts";
+import createMob from "../utils/factories/mobFactory";
+import Mob from "./Mob";
 
 import {
     goblinSlipper
-} from "./items.ts";
+} from "./items";
 
 import {
     waterFallOfSoManyThings
-} from "./places.ts";
+} from "./places";
 
 import {
     grassLands
-} from "./regions.ts";
+} from "./regions";
 
 const mobs: Mob[] = [
-    new Goblin(
-        "Weak Goblin",
-        `The most common goblin, can be found
-        in ${grassLands.name}.`,
-        [
-            waterFallOfSoManyThings    
+    createMob( "Goblin", {
+        name: "Weak Goblin",
+        description: `The most common goblin, can be found in ${grassLands.name}.`,
+        location: [
+            waterFallOfSoManyThings
         ],
-        [
+        drops: [
             {
                 item: goblinSlipper,
                 chance: 34
             }
         ]
-    )
+    })
 ];
 
 export const weakGoblin: Mob = mobs[0];

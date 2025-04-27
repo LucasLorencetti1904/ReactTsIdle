@@ -1,3 +1,3 @@
-import Item from "./Item.ts"
+import Item from "./Item"
 
 export default class Material extends Item {}

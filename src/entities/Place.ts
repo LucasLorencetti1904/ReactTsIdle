@@ -1,18 +1,17 @@
-type temperatureTypes =
+import Region from "./Region";
+
+export type Temperatures =
     | "cold"
     | "warm"
     | "hot"
 ;
 
 export default class Place {
-    public name: string;
-    public temperature: TemperatureTypes;
-    public region: Region;
     
     public constructor(
-        name: string,
-        temperature: TemperatureTypes,
-        region: Region
+        public name: string,
+        public temperature: Temperatures,
+        public region: Region
     ) {
         this.name = name;
         this.temperature = temperature;

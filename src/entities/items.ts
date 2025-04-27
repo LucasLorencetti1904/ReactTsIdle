@@ -1,12 +1,13 @@
-import Material from "./Material.ts";
+import Item from "./Item";
+import createItem from "../utils/factories/itemFactory";
 
 const items: Item[] = [
-    new Material(
-        "Goblin Slipper",
-        "commom",
-        "Don't ask me what it's.",
-        10
-    )
+    createItem("Material", {
+        name: "Goblin Slipper",
+        rarity: "common",
+        description: "Don't ask me what it's.",
+        value: 10
+    })
 ];
 
 export const goblinSlipper: Item = items[0];

@@ -1,10 +1,8 @@
 export default class {
-    public name: string;
-    public tier: number;
 
     public constructor(
-        name: string,
-        tier: number
+        public name: string,
+        public tier: number
     ) {
         this.name = name;
         this.tier = tier;

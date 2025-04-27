@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import * as React from "react";
 import { GlobalStyles } from "@mui/material";
 import BestiaryCard from "./components/CustomCard";
 
